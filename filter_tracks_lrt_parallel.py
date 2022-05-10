@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Mon May  9 17:42:08 2022
-
 @author: sammy
 """
 import h5py
