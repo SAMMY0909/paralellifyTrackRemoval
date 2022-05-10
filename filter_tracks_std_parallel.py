@@ -87,7 +87,8 @@ if not exists_std:
 #This shii is an alternatve non fancy method ;)
 
 with Pool(processes=8) as pool:
-    pool.map(filtrack, inpflist)
+    #pool.map(filtrack, inpflist)
+    pool.map_async(filtrack, inpflist)
     pool.close()
     pool.join()
 '''
