@@ -71,7 +71,7 @@ def filtrack(f):
             fwrite.create_dataset('tracks_from_jet',data=tracks,compression='gzip',compression_opts=7)
         #print(f"End of file ops for file {completeName} in loop num  ==================\n")
         print("Sub process took %s seconds" %(time.time()-sub_pr_start))
-#######################################################################################################  
+###################################################################################################################    
 start_time=time.time()
 inpflist = glob.glob('lrt/*output.h5',recursive=True)
 #print(inpflist)
@@ -88,6 +88,8 @@ if not exists_lrt:
 
 with Pool(processes=8) as pool:
     pool.map(filtrack, inpflist)
+    pool.close()
+    pool.join()
 '''
 #But you want fancy, huh?
 num_cpus = 8
